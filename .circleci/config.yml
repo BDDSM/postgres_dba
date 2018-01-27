@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/postgres_dba
     docker:
-      - image: postgresmen/pg10:v1
+      - image: postgresmen/pg10:v2
         environment:
           - PGHOST: 127.0.0.1
           - PGUSER: root
