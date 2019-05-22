@@ -9,10 +9,24 @@ select regexp_replace(version(), '^PostgreSQL (\d+\.\d+).*$', e'\\1')::numeric >
   \set postgres_dba_last_wal_receive_lsn pg_last_wal_receive_lsn
   \set postgres_dba_last_wal_replay_lsn pg_last_wal_replay_lsn
   \set postgres_dba_is_wal_replay_paused pg_is_wal_replay_paused
+
+  \set postgres_dba_wal_lsn_diff pg_wal_lsn_diff
+  \set postgres_dba_wal_current_lsn pg_current_wal_lsn
+  \set postgres_dba_col_sent_lsn sent_lsn
+  \set postgres_dba_col_write_lsn write_lsn
+  \set postgres_dba_col_flush_lsn flush_lsn
+  \set postgres_dba_col_replay_lsn replay_lsn
 \else
   \set postgres_dba_last_wal_receive_lsn pg_last_xlog_receive_location
   \set postgres_dba_last_wal_replay_lsn pg_last_xlog_replay_location
   \set postgres_dba_is_wal_replay_paused pg_is_xlog_replay_paused
+
+  \set postgres_dba_wal_lsn_diff pg_xlog_location_diff
+  \set postgres_dba_wal_current_lsn pg_current_xlog_location
+  \set postgres_dba_col_sent_lsn sent_location
+  \set postgres_dba_col_write_lsn write_location
+  \set postgres_dba_col_flush_lsn flush_location
+  \set postgres_dba_col_replay_lsn replay_location
 \endif
 
 -- TODO: improve work with custom GUCs for Postgres 9.5 and older
