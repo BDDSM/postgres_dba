@@ -17,7 +17,7 @@
 \echo '  i4 –  List of invalid indexes'
 \echo '  i5 – Unused/Redundant Indexes Do & Undo Migration DDL'
 \echo '  p1 – [EXPERIMENTAL] Alignment Padding. How many bytes can be saved if columns are ordered better?'
-\echo '  r1 – /* In Postgres 9.6 and earlier use:'
+\echo '  r1 – Replication [WIP]'
 \echo '  s1 – Slowest Queries, by Total Time (requires pg_stat_statements extension)'
 \echo '  s2 – Slowest Queries Report (requires pg_stat_statements)'
 \echo '  t1 – Postgres parameters tuning'

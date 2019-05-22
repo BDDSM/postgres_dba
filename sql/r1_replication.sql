@@ -1,4 +1,8 @@
-/* In Postgres 9.6 and earlier use:
+--Replication [WIP]
+
+/*
+In Postgres 9.6 and earlier use:
+
 \set postgres_dba_wal_lsn_diff pg_xlog_location_diff
 \set postgres_dba_wal_current_lsn pg_current_xlog_location
 \set postgres_dba_col_sent_lsn sent_location
