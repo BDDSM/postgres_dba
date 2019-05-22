@@ -19,6 +19,7 @@ select
   pg_size_pretty(:postgres_dba_wal_lsn_diff(:postgres_dba_col_write_lsn, :postgres_dba_col_flush_lsn)) as flush_lag,
   pg_size_pretty(:postgres_dba_wal_lsn_diff(:postgres_dba_col_flush_lsn, :postgres_dba_col_replay_lsn)) as replay_lag,
   pg_size_pretty(:postgres_dba_wal_lsn_diff(:postgres_dba_wal_current_lsn(), coalesce(:postgres_dba_col_replay_lsn, :postgres_dba_col_flush_lsn))) as total_lag,
+  txid_current() % (2^32)::int8 - xmin::text::int8 as xid_delayed,
   slots.*
 from pg_stat_replication
 left join pg_replication_slots slots on pid = active_pid;
